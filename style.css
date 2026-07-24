@@ -1,0 +1,1547 @@
+* {
+
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+
+}
+
+
+
+body {
+
+    margin:0;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    radial-gradient(circle,#1b1b2f,#050505);
+
+    color:white;
+
+    transition:.4s;
+
+}
+
+
+
+
+
+body.light {
+
+    background:
+    radial-gradient(circle,#d8ecff,#a9bfd8);
+
+    color:#111;
+
+}
+
+
+
+
+
+
+
+/* THEME BUTTON */
+
+
+#themeButton {
+
+    position:fixed;
+
+    top:25px;
+
+    left:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:25px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+    z-index:20000;
+
+}
+
+
+
+#themeButton:hover {
+
+    transform:scale(1.15);
+
+    box-shadow:
+    0 0 25px cyan;
+
+}
+
+
+
+
+
+
+
+
+.container {
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+
+
+
+
+
+
+/* CLOCK */
+
+
+.clock {
+
+    width:270px;
+    height:270px;
+
+    border-radius:50%;
+
+    border:3px solid
+    rgba(255,255,255,.85);
+
+    position:relative;
+
+    background:
+
+    radial-gradient(
+        circle at 35% 30%,
+        rgba(255,255,255,.20),
+        rgba(255,255,255,.05) 45%,
+        rgba(0,0,0,.30)
+    );
+
+    backdrop-filter:
+    blur(10px);
+
+    -webkit-backdrop-filter:
+    blur(10px);
+
+    box-shadow:
+
+    0 0 20px
+    rgba(0,0,0,.55),
+
+    0 0 35px
+    rgba(0,191,255,.40),
+
+    inset 0 0 25px
+    rgba(255,255,255,.08);
+
+}
+
+
+
+
+
+/* LIGHT MODE CLOCK */
+
+
+body.light .clock {
+
+    border-color:
+    rgba(0,0,0,.55);
+
+    background:
+
+    radial-gradient(
+        circle at 35% 30%,
+        rgba(255,255,255,.65),
+        rgba(255,255,255,.30) 50%,
+        rgba(255,255,255,.15)
+    );
+
+    box-shadow:
+
+    0 0 20px
+    rgba(0,0,0,.25),
+
+    0 0 35px
+    rgba(0,191,255,.30),
+
+    inset 0 0 25px
+    rgba(255,255,255,.40);
+
+}
+
+
+
+.number {
+
+    position:absolute;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+
+
+body.light .number {
+
+    color:#222;
+
+}
+
+
+
+
+
+.number12 {
+
+    top:15px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+
+
+.number3 {
+
+    right:20px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+}
+
+
+
+.number6 {
+
+    bottom:15px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+
+
+.number9 {
+
+    left:20px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+}
+
+
+
+
+
+.hand {
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:50%;
+
+    transform-origin:bottom;
+
+}
+
+
+
+.hour {
+
+    height:65px;
+
+    width:8px;
+
+    background:white;
+
+    box-shadow:
+    0 0 8px
+    rgba(255,255,255,.9);
+
+}
+
+
+
+.minute {
+
+    height:90px;
+
+    width:5px;
+
+    background:white;
+
+    box-shadow:
+    0 0 8px
+    rgba(255,255,255,.9);
+
+}
+
+
+
+body.light .hour,
+body.light .minute {
+
+    background:#222;
+
+    box-shadow:
+    0 0 6px
+    rgba(255,255,255,.8);
+
+}
+
+
+
+body.light .hour,
+body.light .minute {
+
+    background:#222;
+
+}
+
+
+
+.second {
+
+    height:105px;
+
+    width:2px;
+
+    background:red;
+
+}
+
+
+
+.center {
+
+    position:absolute;
+
+    width:16px;
+
+    height:16px;
+
+    background:red;
+
+    border-radius:50%;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+}
+
+
+
+
+
+
+
+
+
+
+/* SEARCH */
+
+
+.searchBox {
+
+    width:450px;
+
+    padding:15px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    gap:10px;
+
+    position:relative;
+
+    z-index:10000;
+
+
+    background:
+    rgba(255,255,255,.1);
+
+
+    backdrop-filter:blur(15px);
+
+
+    box-shadow:
+    0 0 20px cyan;
+
+}
+
+
+
+
+
+
+#searchInput {
+
+    flex:1;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    border:none;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+
+
+
+
+#searchButton {
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:0 18px;
+
+    cursor:pointer;
+
+    background:#00bfff;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+
+
+
+
+/* SEARCH ENGINE */
+
+
+.engineSelector {
+
+    position:relative;
+
+    z-index:10001;
+
+}
+
+
+
+#engineButton {
+
+    height:100%;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:10px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+#engineMenu {
+
+    display:none;
+
+    position:absolute;
+
+    top:45px;
+
+    left:0;
+
+    width:160px;
+
+    background:#222;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    z-index:30000;
+
+    box-shadow:
+    0 0 20px cyan;
+
+}
+
+
+
+
+
+#engineMenu div {
+
+    padding:10px;
+
+    cursor:pointer;
+
+}
+
+
+
+#engineMenu div:hover {
+
+    background:
+    rgba(255,255,255,.15);
+
+}
+
+
+
+
+
+body.light #engineMenu {
+
+    background:white;
+
+}
+
+
+
+body.light #engineMenu div {
+
+    color:#111;
+
+}
+
+
+
+
+
+body.light #engineMenu div:hover {
+
+    background:#d8f3ff;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* CARDS */
+
+
+.cardsContainer {
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+
+
+
+
+
+.card {
+
+    width:120px;
+
+    height:100px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:5px;
+
+    cursor:grab;
+
+    position:relative;
+
+
+    background:
+    rgba(255,255,255,.08);
+
+
+    backdrop-filter:blur(12px);
+
+
+    transition:.3s;
+
+}
+
+
+
+
+
+.card:active {
+
+    cursor:grabbing;
+
+}
+
+
+
+
+
+body.light .card {
+
+    background:
+    rgba(255,255,255,.35);
+
+    color:#111;
+
+}
+
+
+
+
+
+.card:hover {
+
+    transform:
+    translateY(-8px)
+    scale(1.05);
+
+
+    box-shadow:
+    0 0 25px red;
+
+}
+
+
+
+
+
+body.light .card:hover {
+
+    box-shadow:
+    0 0 25px #00bfff;
+
+}
+
+
+
+
+
+.cardIcon {
+
+    font-size:24px;
+
+}
+
+
+
+
+
+.cardName {
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+.addCard {
+
+    font-size:40px;
+
+}
+
+
+
+
+
+.cardActions {
+
+    position:absolute;
+
+    bottom:5px;
+
+    display:none;
+
+}
+
+
+
+
+
+.card:hover .cardActions {
+
+    display:flex;
+
+}
+
+
+
+
+
+.cardActions button {
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+
+/* DRAG */
+
+
+.card.dragging {
+
+    opacity:.5;
+
+    transform:
+    scale(1.08)
+    rotate(3deg);
+
+
+    box-shadow:
+    0 0 25px cyan;
+
+}
+
+
+
+
+
+
+
+
+
+/* MODAL */
+
+
+.modal {
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.7);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:50000;
+
+}
+
+
+
+
+
+.modalBox {
+
+    background:#111;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+
+
+.modalBox input {
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:none;
+
+}
+
+
+
+
+
+.modalButtons {
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:600px){
+
+
+    .clock {
+
+        width:200px;
+
+        height:200px;
+
+    }
+
+
+
+    .searchBox {
+
+        width:90vw;
+
+        flex-wrap:wrap;
+
+    }
+
+
+
+    #searchInput {
+
+        width:100%;
+
+    }
+
+
+
+    .cardsContainer {
+
+        width:95vw;
+
+    }
+
+
+
+    .card {
+
+        width:100px;
+
+        height:90px;
+
+    }
+
+
+
+    #themeButton {
+
+        top:15px;
+
+        left:15px;
+
+    }
+
+
+}/* ================= */
+/* WALLPAPER SYSTEM */
+/* ================= */
+
+
+body {
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+}
+
+
+
+
+#wallpaperButton {
+
+
+    position:fixed;
+
+
+    right:25px;
+
+    bottom:25px;
+
+
+    width:55px;
+
+    height:55px;
+
+
+    border-radius:50%;
+
+
+    border:none;
+
+
+    cursor:pointer;
+
+
+    font-size:25px;
+
+
+    background:
+    rgba(255,255,255,.15);
+
+
+    backdrop-filter:blur(10px);
+
+
+    color:white;
+
+
+    z-index:20000;
+
+
+}
+
+
+
+#wallpaperButton:hover {
+
+
+    transform:scale(1.15);
+
+
+    box-shadow:
+    0 0 25px cyan;
+
+
+}
+
+
+
+
+
+
+
+#wallpaperPanel {
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:90px;
+
+
+    width:210px;
+
+
+    padding:15px;
+
+
+    border-radius:16px;
+
+
+    background:
+    rgba(0,0,0,.75);
+
+
+    backdrop-filter:blur(15px);
+
+
+    display:none;
+
+
+    flex-direction:column;
+
+
+    gap:10px;
+
+
+    z-index:20000;
+
+
+    box-shadow:
+    0 0 25px cyan;
+
+}
+
+
+
+
+
+
+#wallpaperPanel h3 {
+
+
+    margin-top:0;
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+
+.wallpapers {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+
+    gap:8px;
+
+}
+
+
+
+
+
+.wallpaperOption {
+
+    height:55px;
+
+    border-radius:10px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-size:24px;
+
+
+    cursor:pointer;
+
+
+    background:
+    rgba(255,255,255,.15);
+
+
+    transition:.3s;
+
+}
+
+
+
+
+
+.wallpaperOption:hover {
+
+
+    transform:
+    scale(1.1);
+
+
+    box-shadow:
+    0 0 15px cyan;
+
+
+}
+
+
+
+
+
+
+.uploadWallpaper {
+
+
+    display:block;
+
+
+    margin-top:15px;
+
+
+    padding:10px;
+
+
+    text-align:center;
+
+
+    border-radius:12px;
+
+
+    cursor:pointer;
+
+
+    background:
+    rgba(255,255,255,.15);
+
+
+}
+
+
+
+
+
+.uploadWallpaper input {
+
+
+    display:none;
+
+
+}
+
+
+
+
+
+
+
+body.light #wallpaperPanel {
+
+
+    background:
+    rgba(255,255,255,.85);
+
+
+    color:#111;
+
+
+}#defaultWallpaper {
+
+    border:none;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:
+    rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:14px;
+
+}
+
+
+
+#defaultWallpaper:hover {
+
+    background:#00bfff;
+
+}body.light #defaultWallpaper {
+
+    color:#111;
+
+}/* ============================= */
+/* WALLPAPER BUTTON */
+/* ============================= */
+
+#wallpaperButton {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 22px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    color: white;
+
+    backdrop-filter:
+    blur(10px);
+
+    z-index: 20000;
+
+    transition: .3s;
+
+}
+
+
+#wallpaperButton:hover {
+
+    transform: scale(1.1);
+
+    box-shadow:
+    0 0 20px cyan;
+
+}
+
+
+
+
+
+/* ============================= */
+/* WALLPAPER PANEL */
+/* ============================= */
+
+#wallpaperPanel {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 85px;
+
+    width: 220px;
+
+    padding: 15px;
+
+    border-radius: 16px;
+
+    background:
+    rgba(0,0,0,.80);
+
+    backdrop-filter:
+    blur(15px);
+
+    display: none;
+
+    z-index: 19999;
+
+    box-shadow:
+    0 0 25px cyan;
+
+}
+
+
+#wallpaperPanel h3 {
+
+    margin:
+    0 0 12px 0;
+
+    text-align: center;
+
+    font-size: 16px;
+
+}
+
+
+
+
+
+/* ============================= */
+/* WALLPAPER GRID */
+/* ============================= */
+
+.wallpapers {
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(2, 1fr);
+
+    gap: 8px;
+
+}
+
+
+
+
+
+/* ============================= */
+/* WALLPAPER THUMBNAILS */
+/* ============================= */
+
+.wallpaperOption {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    border:
+    2px solid transparent;
+
+    transition: .3s;
+
+}
+
+
+.wallpaperOption img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: .3s;
+
+}
+
+
+
+
+
+/* HOVER */
+
+.wallpaperOption:hover {
+
+    transform: scale(1.05);
+
+    border-color: cyan;
+
+    box-shadow:
+    0 0 15px cyan;
+
+}
+
+
+.wallpaperOption:hover img {
+
+    transform: scale(1.05);
+
+}
+
+
+
+
+
+/* ============================= */
+/* DEFAULT BUTTON */
+/* ============================= */
+
+#defaultWallpaper {
+
+    width: 100%;
+
+    padding: 9px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background:
+    rgba(255,255,255,.15);
+
+    color: white;
+
+    font-size: 13px;
+
+}
+
+
+#defaultWallpaper:hover {
+
+    background:
+    #00bfff;
+
+}
+
+
+
+
+
+/* ============================= */
+/* UPLOAD */
+/* ============================= */
+
+.uploadWallpaper {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 9px;
+
+    margin-top: 8px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background:
+    rgba(255,255,255,.15);
+
+    color: white;
+
+    font-size: 13px;
+
+}
+
+
+.uploadWallpaper:hover {
+
+    background:
+    rgba(0,191,255,.5);
+
+}
+
+
+.uploadWallpaper input {
+
+    display: none;
+
+}
+
+
+
+
+
+/* ============================= */
+/* LIGHT MODE */
+/* ============================= */
+
+body.light #wallpaperPanel {
+
+    background:
+    rgba(255,255,255,.85);
+
+    box-shadow:
+    0 0 25px #00bfff;
+
+}
+
+
+body.light #defaultWallpaper {
+
+    color: #111;
+
+}
+
+
+body.light .uploadWallpaper {
+
+    color: #111;
+
+}
+
+
+
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width:600px) {
+
+
+    #wallpaperPanel {
+
+        right: 15px;
+
+        bottom: 75px;
+
+        width: 200px;
+
+    }
+
+
+    #wallpaperButton {
+
+        right: 15px;
+
+        bottom: 15px;
+
+    }
+
+}

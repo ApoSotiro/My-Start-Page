@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Gaming Homepage
+    </title>
+
+    <link
+    rel="stylesheet"
+    href="style.css">
+
+</head>
+
+
+
+<body>
+
+
+<!-- THEME BUTTON -->
+
+
+<button id="themeButton">
+
+    ☀️
+
+</button>
+
+
+
+
+
+<div class="container">
+
+
+
+    <!-- CLOCK -->
+
+
+    <div class="clock">
+
+
+        <div class="number number12">
+            12
+        </div>
+
+
+        <div class="number number3">
+            3
+        </div>
+
+
+        <div class="number number6">
+            6
+        </div>
+
+
+        <div class="number number9">
+            9
+        </div>
+
+
+
+        <div class="hand hour"></div>
+
+        <div class="hand minute"></div>
+
+        <div class="hand second"></div>
+
+
+
+        <div class="center"></div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- SEARCH -->
+
+
+    <div class="searchBox">
+
+
+
+        <input
+        id="searchInput"
+        placeholder="Αναζήτηση...">
+
+
+
+        <button
+        id="searchButton">
+
+            GO
+
+        </button>
+
+
+
+
+
+        <div class="engineSelector">
+
+
+
+            <button
+            id="engineButton"
+            type="button">
+
+                🌐 Google ▼
+
+            </button>
+
+
+
+
+
+            <div id="engineMenu">
+
+
+
+                <div
+                data-engine="google">
+
+                    🌐 Google
+
+                </div>
+
+
+
+                <div
+                data-engine="bing">
+
+                    🔷 Bing
+
+                </div>
+
+
+
+                <div
+                data-engine="duckduckgo">
+
+                    🦆 DuckDuckGo
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- CARDS -->
+
+
+    <div
+    id="cardsContainer"
+    class="cardsContainer">
+
+
+
+        <button
+        id="addCard"
+        class="card addCard">
+
+            +
+
+        </button>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- CARD MODAL -->
+
+
+<div
+id="modal"
+class="modal">
+
+
+
+    <div
+    class="modalBox">
+
+
+
+        <h2>
+
+            Νέα καρτέλα
+
+        </h2>
+
+
+
+
+
+        <input
+        id="cardName"
+        placeholder="Όνομα">
+
+
+
+
+
+        <input
+        id="cardUrl"
+        placeholder="URL">
+
+
+
+
+
+        <div
+        class="modalButtons">
+
+
+
+            <button
+            id="saveCard">
+
+                Αποθήκευση
+
+            </button>
+
+
+
+            <button
+            id="cancelCard">
+
+                Άκυρο
+
+            </button>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- WALLPAPER BUTTON -->
+
+
+<button
+id="wallpaperButton">
+
+    🖼️
+
+</button>
+
+
+
+
+
+
+
+
+
+<!-- WALLPAPER PANEL -->
+
+
+<div
+id="wallpaperPanel">
+
+
+
+    <h3>
+
+        Wallpaper
+
+    </h3>
+
+
+
+
+
+
+
+    <!-- WALLPAPER THUMBNAILS -->
+
+
+    <div
+    class="wallpapers">
+
+
+
+
+
+        <div
+        class="wallpaperOption"
+        data-wallpaper="cyberpunk">
+
+
+
+            <img
+            src="assets/wallpapers/cyberpunk.jpeg"
+            alt="Cyberpunk">
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div
+        class="wallpaperOption"
+        data-wallpaper="galaxy">
+
+
+
+            <img
+            src="assets/wallpapers/galaxy.jpeg"
+            alt="Galaxy">
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div
+        class="wallpaperOption"
+        data-wallpaper="forest">
+
+
+
+            <img
+            src="assets/wallpapers/forest.jpeg"
+            alt="Forest">
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div
+        class="wallpaperOption"
+        data-wallpaper="futuristic">
+
+
+
+            <img
+            src="assets/wallpapers/futuristic.jpeg"
+            alt="Futuristic City">
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <hr>
+
+
+
+
+
+
+
+    <!-- DEFAULT WALLPAPER -->
+
+
+    <button
+    id="defaultWallpaper">
+
+        ↩️ Default
+
+    </button>
+
+
+
+
+
+
+
+    <!-- UPLOAD PERSONAL WALLPAPER -->
+
+
+    <label
+    class="uploadWallpaper">
+
+
+        📁 Ανέβασε εικόνα
+
+
+
+        <input
+        type="file"
+        id="wallpaperUpload"
+        accept="image/*">
+
+
+
+    </label>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- JAVASCRIPT -->
+
+
+<script
+src="js/storage.js">
+</script>
+
+
+<script
+src="js/icons.js">
+</script>
+
+
+<script
+src="js/theme.js">
+</script>
+
+
+<script
+src="js/search.js">
+</script>
+
+
+<script
+src="js/clock.js">
+</script>
+
+
+<script
+src="js/cards.js">
+</script>
+
+
+<script
+src="js/wallpaper.js">
+</script>
+
+
+<script
+src="js/app.js">
+</script>
+
+
+
+</body>
+
+</html>
